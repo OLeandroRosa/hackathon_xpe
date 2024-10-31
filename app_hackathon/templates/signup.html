@@ -1,0 +1,28 @@
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+
+<div class="container_pai">
+
+    <div class="container_login_form">
+        <h2 class="title_login_form">Cadastro de Usuário</h2>
+        <form action="/login_form" method="POST" class="form-register">
+            <div class="input-group_login_form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+            </div>
+
+            <div class="input-group_login_form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+            </div>
+
+            <div class="input-group_login_form">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+            </div>
+
+            <button type="submit" class="btn-submit_login_form">Cadastrar</button>
+        </form>
+    </div>
+</div>
+{% include 'footer.html' %}

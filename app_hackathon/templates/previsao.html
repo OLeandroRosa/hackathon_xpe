@@ -1,0 +1,82 @@
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+
+<!-- Container Principal -->
+<div class="container_pai">
+    <div class="container">
+        <h2 class="title">Previsão de Preço de Imóvel</h2>
+        <form action="/previsao_form" method="post" class="prediction-form">        
+            <!-- Criando duas colunas -->
+            <div class="form-row">
+                <div class="input-group">
+                    <label for="YearBuilt">Ano de Construção:</label>
+                    <input required type="text" id="YearBuilt" name="YearBuilt" placeholder="Ex: 1995">
+                </div>
+                <div class="input-group">
+                    <label for="YearRemodAdd">Ano da Reforma:</label>
+                    <input required type="text" id="YearRemodAdd" name="YearRemodAdd" placeholder="Ex: 2005">
+                    <p>(Colocar igual a Construção se não houver)</p>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="input-group">
+                    <label for="FirstFlrSF">Área do 1º Andar (m²):</label>
+                    <input required type="text" id="FirstFlrSF" name="FirstFlrSF" placeholder="Ex: 100">
+                </div>
+                <div class="input-group">
+                    <label for="FullBath">Banheiros Completos:</label>
+                    <input required type="text" id="FullBath" name="FullBath" placeholder="Ex: 2">
+                </div>
+            </div>
+
+            
+            <div class="form-row">
+                <div class="input-group">
+                    <label for="OverallQual">Qualidade Geral (1-10):</label>
+                    <input required type="text" id="OverallQual" name="OverallQual" placeholder="Ex: 8">
+                </div>
+                <div class="input-group">
+                    <label for="KitchenQual">Qualidade da Cozinha:</label>
+                    <select id="KitchenQual" name="KitchenQual">
+                        <option value="Ex">Excelente</option>
+                        <option value="Gd">Boa</option>
+                        <option value="TA">Médio</option>
+                        <option value="Fa">Regular</option>
+                        <option value="Po">Irregular</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-group">
+                    <label for="TotRmsAbvGrd">Total de Cômodos:</label>
+                    <input required type="text" id="TotRmsAbvGrd" name="TotRmsAbvGrd" placeholder="Ex: 7">
+                </div>
+                <div class="input-group">
+                    <label for="GrLivArea">Sala de estar (m²):</label>
+                    <input required type="text" id="GrLivArea" name="GrLivArea" placeholder="Ex: 2">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-group">
+                    <label for="GarageArea">Área da Garagem (m²):</label>
+                    <input required type="text" id="GarageArea" name="GarageArea" placeholder="Ex: 15">
+                </div>
+
+                <div class="input-group">
+                    <label for="GarageCars">Capacidade da Garagem (Carros):</label>
+                    <input required type="text" id="GarageCars" name="GarageCars" placeholder="Ex: 2">
+                </div>
+            </div>
+
+
+            <button type="submit" class="btn-submit">Prever Preço</button>
+        </form>
+        
+        {% if prediction_text %}
+        <h3 style="margin-top: 30px;">{{ prediction_text }}</h3>
+        {% endif %}
+    </div>
+</div>
+
+{% include 'footer.html' %}

@@ -1,0 +1,40 @@
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+
+
+    <!-- Seção de Busca -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Facilitando sonhos e possibilitando investimentos</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Digite o nome da rua, bairro ou cidade">
+                <button>Buscar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categorias -->
+    <section class="categories">
+        <h2>Categorias</h2>
+        <div class="category-cards">
+            <div class="card">
+                <img src="{{ url_for('static', filename='img/pet.jpg') }}" alt="Adequado para Pets">
+                <h3>Adequado para Pets</h3>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='img/familia.jpg') }}" alt="Para uma grande família">
+                <h3>Para uma grande família</h3>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='img/mobiliada.jpg') }}" alt="Imóveis mobiliado">
+                <h3>Imóveis mobiliado</h3>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='img/Aluguel-Sem-Fiador.png') }}" alt="Aluguel sem fiador">
+                <h3>Aluguel sem fiador</h3>
+            </div>
+        </div>
+    </section>
+
+
+{% include 'footer.html' %}
